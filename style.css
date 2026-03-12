@@ -1,0 +1,532 @@
+/* ==========================================================================
+   Benjamin O. Harrison — Academic Website
+   Clean, al-folio–inspired design. Pure HTML/CSS, no build tools.
+   ========================================================================== */
+
+/* --- Reset & Base -------------------------------------------------------- */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-bg: #ffffff;
+    --color-text: #333333;
+    --color-text-light: #6c757d;
+    --color-heading: #1a1a2e;
+    --color-link: #2a6496;
+    --color-link-hover: #1a3d5c;
+    --color-border: #dee2e6;
+    --color-nav-bg: #ffffff;
+    --color-nav-text: #333333;
+    --color-footer-bg: #f8f9fa;
+    --color-card-bg: #ffffff;
+    --color-accent: #2a6496;
+    --font-heading: 'Libre Baskerville', Georgia, serif;
+    --font-body: 'Source Sans Pro', 'Segoe UI', sans-serif;
+    --max-width: 920px;
+    --nav-height: 56px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: var(--color-link);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
+strong {
+    font-weight: 600;
+}
+
+/* --- Navigation ---------------------------------------------------------- */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--color-nav-bg);
+    border-bottom: 1px solid var(--color-border);
+    height: var(--nav-height);
+}
+
+.nav-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.nav-brand {
+    font-family: var(--font-heading);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-heading);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+}
+
+.nav-brand:hover {
+    text-decoration: none;
+    color: var(--color-heading);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+
+.nav-links a {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 400;
+    color: var(--color-nav-text);
+    text-decoration: none;
+    padding: 4px 0;
+    position: relative;
+    transition: color 0.2s;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: var(--color-accent);
+    transition: width 0.25s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: var(--color-heading);
+    text-decoration: none;
+}
+
+/* Hamburger */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-heading);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-toggle.open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* --- Main Content -------------------------------------------------------- */
+.main-content {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 60px 24px 80px;
+    min-height: calc(100vh - var(--nav-height) - 80px);
+}
+
+/* --- About Page ---------------------------------------------------------- */
+.about-container {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.bio-section {
+    flex: 1;
+    min-width: 0;
+}
+
+.bio-section h1 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.bio-section p {
+    margin-bottom: 16px;
+    font-size: 1rem;
+    line-height: 1.75;
+}
+
+.profile-section {
+    flex-shrink: 0;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-top: 8px;
+}
+
+.profile-img-wrapper {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info {
+    text-align: center;
+}
+
+.profile-address {
+    font-size: 0.88rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.social-icons a {
+    color: var(--color-text-light);
+    font-size: 1.25rem;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.social-icons a:hover {
+    color: var(--color-heading);
+    text-decoration: none;
+    transform: translateY(-1px);
+}
+
+/* --- Page Headers (Research, Teaching, CV) -------------------------------- */
+.page-header {
+    margin-bottom: 40px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.page-header h1 {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 4px;
+}
+
+.page-header p {
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    margin-top: 4px;
+}
+
+/* --- Research Page -------------------------------------------------------- */
+.research-section {
+    margin-bottom: 48px;
+}
+
+.research-section h2 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.research-year {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+    margin: 24px 0 12px;
+}
+
+.paper-item {
+    margin-bottom: 28px;
+    padding-left: 0;
+}
+
+.paper-title {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-heading);
+    margin-bottom: 4px;
+    line-height: 1.4;
+}
+
+.paper-authors {
+    font-size: 0.92rem;
+    color: var(--color-text-light);
+    margin-bottom: 4px;
+}
+
+.paper-venue {
+    font-size: 0.92rem;
+    color: var(--color-text-light);
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.paper-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.paper-links a {
+    display: inline-block;
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 3px 10px;
+    border: 1px solid var(--color-accent);
+    border-radius: 4px;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    transition: background 0.2s, color 0.2s;
+}
+
+.paper-links a:hover {
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+}
+
+.paper-abstract {
+    margin-top: 10px;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    display: none;
+    padding: 12px 16px;
+    background: #f8f9fa;
+    border-radius: 6px;
+    border-left: 3px solid var(--color-accent);
+}
+
+.paper-abstract.show {
+    display: block;
+}
+
+/* --- Teaching Page -------------------------------------------------------- */
+.teaching-institution {
+    margin-bottom: 40px;
+}
+
+.teaching-institution h2 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-heading);
+    margin-bottom: 20px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.course-item {
+    margin-bottom: 24px;
+    padding-left: 0;
+}
+
+.course-name {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--color-heading);
+    margin-bottom: 2px;
+}
+
+.course-code {
+    font-size: 0.88rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.course-role {
+    font-size: 0.92rem;
+    color: var(--color-text-light);
+    margin-bottom: 6px;
+}
+
+.course-desc {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--color-text);
+}
+
+/* --- CV Page ------------------------------------------------------------- */
+.cv-actions {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border-radius: 6px;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+}
+
+.cv-btn:hover {
+    background: var(--color-accent);
+    color: #fff;
+    text-decoration: none;
+}
+
+.cv-btn.primary {
+    background: var(--color-accent);
+    color: #fff;
+}
+
+.cv-btn.primary:hover {
+    background: var(--color-link-hover);
+    border-color: var(--color-link-hover);
+}
+
+.cv-embed {
+    width: 100%;
+    height: 75vh;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: #f8f9fa;
+}
+
+/* --- Footer -------------------------------------------------------------- */
+.footer {
+    background: var(--color-footer-bg);
+    border-top: 1px solid var(--color-border);
+    padding: 24px 0;
+    text-align: center;
+}
+
+.footer-container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.footer p {
+    font-size: 0.82rem;
+    color: var(--color-text-light);
+}
+
+/* --- Responsive ---------------------------------------------------------- */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: var(--nav-height);
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: var(--color-nav-bg);
+        border-bottom: 1px solid var(--color-border);
+        padding: 16px 24px;
+        gap: 12px;
+        display: none;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .about-container {
+        flex-direction: column-reverse;
+        gap: 32px;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-section {
+        width: auto;
+    }
+
+    .bio-section h1 {
+        font-size: 1.6rem;
+    }
+
+    .main-content {
+        padding: 40px 20px 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bio-section h1 {
+        font-size: 1.4rem;
+    }
+
+    .profile-img-wrapper {
+        width: 160px;
+        height: 160px;
+    }
+
+    .cv-embed {
+        height: 60vh;
+    }
+}

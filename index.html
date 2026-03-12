@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benjamin O. Harrison</title>
+    <link rel="icon" type="image/png" href="images/benhars_logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WB9NNGTKCT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WB9NNGTKCT');
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Benjamin O. Harrison</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">About</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="about-container">
+            <!-- Left Column: Bio -->
+            <div class="bio-section">
+                <h1>Benjamin Owusu Harrison</h1>
+                <p>
+                    I am a second-year PhD student in Economics at
+                    <a href="https://economics.emory.edu/people/grad-students/harrison-benjamin.html/" target="_blank">Emory University</a>.
+                    I hold a Bachelor's degree in Economics and Mathematics from the
+                    <a href="https://www.ug.edu.gh/" target="_blank">University of Ghana, Legon</a>.
+                    I then pursued a Master's degree in Quantitative Economics through the
+                    Erasmus Mundus Joint Degree program
+                    <a href="https://master-economics-qem.pantheonsorbonne.fr/" target="_blank">(EMJDP)</a>,
+                    jointly awarded by
+                    <a href="https://unive.it/" target="_blank">Ca'Foscari University of Venice</a> and the
+                    <a href="https://uclouvain.be/fr/index.html" target="_blank">Catholic University of Louvain</a>.
+                </p>
+                <p>
+                    Before joining Emory, I worked as a Research Assistant at the
+                    Venice Center for Economics and Risk Analytics
+                    (<a href="https://unive.it/pag/35190/" target="_blank">VERA</a>)
+                    and served as a Teaching Assistant at Ca'Foscari University.
+                </p>
+                <p>
+                    My research focuses on <strong>econometrics</strong>, <strong>time series analysis</strong>,
+                    <strong>Bayesian statistics</strong>, <strong>financial networks</strong>, and <strong>causal inference</strong>.
+                </p>
+            </div>
+
+            <!-- Right Column: Photo & Info -->
+            <div class="profile-section">
+                <div class="profile-img-wrapper">
+                    <img src="images/me.jpg" alt="Benjamin O. Harrison" class="profile-img">
+                </div>
+                <div class="profile-info">
+                    <p class="profile-address">
+                        R. Randall Rollins Building<br>
+                        1516 Clifton Road, NE<br>
+                        Atlanta, GA 30322
+                    </p>
+                    <div class="social-icons">
+                        <a href="mailto:benjamin.harrison@emory.edu" title="Email" aria-label="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://github.com/benhars" target="_blank" title="GitHub" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/benhars/" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://orcid.org/0009-0004-1107-4870/" target="_blank" title="ORCID" aria-label="ORCID">
+                            <i class="ai ai-orcid"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Benjamin O. Harrison. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile nav toggle
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            navToggle.classList.toggle('open');
+        });
+    </script>
+</body>
+</html>

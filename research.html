@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research | Benjamin O. Harrison</title>
+    <link rel="icon" type="image/png" href="images/benhars_logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WB9NNGTKCT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-WB9NNGTKCT');
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">Benjamin O. Harrison</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">About</a></li>
+                <li><a href="cv.html">CV</a></li>
+                <li><a href="research.html" class="active">Research</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="page-header">
+            <h1>Research</h1>
+            <p>Publications &amp; Working Papers</p>
+        </div>
+
+        <!-- Working Papers -->
+        <div class="research-section">
+            <h2>Working Papers</h2>
+            <p style="color: var(--color-text-light); font-style: italic;">Working papers in progress.</p>
+        </div>
+
+        <!-- Master's Thesis -->
+        <div class="research-section">
+            <h2>Master's Thesis</h2>
+            <div class="paper-item">
+                <div class="paper-title">ESG Ratings and Portfolio Selection: A Network Approach</div>
+                <div class="paper-venue">Multilayer Networks</div>
+                <div class="paper-links">
+                    <a href="https://drive.google.com/file/d/1K7Xl8wb6zrcfya3lOBPQKGkN4OnYr6cs/view?usp=drive_link" target="_blank">
+                        <i class="fas fa-file-pdf"></i> PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2025 Benjamin O. Harrison. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+            navToggle.classList.toggle('open');
+        });
+
+        // Toggle abstract visibility
+        function toggleAbstract(id) {
+            const el = document.getElementById(id);
+            if (el) el.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>
